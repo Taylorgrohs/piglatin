@@ -14,4 +14,8 @@ describe('pigLatin', function() {
   it('starts with "y" treat as consonant', function(){
     expect(pigLatin("yellow")).to.equal("ellowyay");
   })
+
+  it('adds pigLatin on each word in a sentence', function() {
+    expect(pigLatin("strange apple")).to.equal("angestray appleay");
+  })
 })

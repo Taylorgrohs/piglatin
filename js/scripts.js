@@ -1,5 +1,8 @@
+
 var pigLatin = function(word){
-  var slicePostion = search(word); // assigns number generaged by search function
+  // debugger;
+  //var outterWord = outterBlock(word);
+  var slicePostion = search(word); // assigns number generaged by search function //word = "strange apple"
   if(word[0] === "q") {
     return word.slice(2) + word.slice(0, 2) + "ay";
   } else {
@@ -7,18 +10,34 @@ var pigLatin = function(word){
     }
 };
 
-var search = function(word) {
-  var  word = word.split("");
-  var vowels = ["a", "e", "i", "o", "u"]
+/*
+ var outterBlock = function(word) {
+   var word = word.split(" ")
 
-  for (var j = 0; j < word.length; j++) {
-    for (var i = 0; i < vowels.length; i++) {
-      if (word[j]  === vowels[i]) {
-        return j;     // returns number (j-eth number);
+   for (var b = 0; b < word.length; b++) {
+     search(word[b]);
+      console.log(word[b]);
+
+   }
+ }
+*/
+var search = function(word) {
+    //console.log(innerWord);
+    // debugger;
+    var word = word.split(" ")
+    for (var b = 0; b < word.length; b++) {
+    var word = word[b].split("")
+    var vowels = ["a", "e", "i", "o", "u"]
+    for (var j = 0; j < word.length; j++) {
+      for (var i = 0; i < vowels.length; i++) {
+        if (word[j]  === vowels[i]) {
+          return j;     // returns number (j-eth number);
+        }
       }
     }
-  }
+}
 };
+
 
 
 $(document).ready(function(){
