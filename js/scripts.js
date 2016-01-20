@@ -2,8 +2,11 @@
 var pigLatin = function(apple){
 
   var firstChar = apple.charAt(0);
-  if (firstChar === "a" || firstChar === "e" || firstChar === "i" || firstChar === "o" || firstChar === "u")
+  var vowels = ["a", "e", "i", "o", "u"]
+  if (firstChar === vowels)
   {
+    return true;
+  } else if (firstChar !== vowels) {
     return true;
   }
   else {
