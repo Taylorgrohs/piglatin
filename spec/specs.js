@@ -6,4 +6,8 @@ describe('pigLatin', function() {
   it('starts with vowel, add "ay" to the end', function() {
     expect(pigLatin("animal")).to.equal(true);
   })
+
+  it('starts with one or more consonants, move all of the first consecutive consonants to the end and add "ay"', function(){
+    expect(pigLatin("start")).to.equal(true);
+  })
 })
