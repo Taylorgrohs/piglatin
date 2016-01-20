@@ -1,32 +1,33 @@
 var pigLatin = function(word){
+  var example = search(word);
+  return word.slice(example) + word.slice(0, example) + "ay";
+};
 
+var search = function(word) {
+  var  word = word.split("");
   var vowels = ["a", "e", "i", "o", "u"]
 
-  for (var i = 0 ; i <= vowels.length; i++) {
-    if (word[0] === vowels[i])
-    {
-      return "vowel";
-    } else if (word[0] !== vowels[i]) {
-      return "consonant";
-    }
-    else {
-      return false;
+for (var j = 0; j < word.length; j++) {
+  for (var i = 0; i < vowels.length; i++) {
+    if (word[j]  === vowels[i]) {
+      return j;
     }
   }
 }
+};
   $(document).ready(function(){
     $("form#pigLatin").submit(function(event){
       var word = $("input#word").val();
-       var validate = pigLatin(word);
-      if (validate === "vowel") {
-      $(".result").text(word+"ay")
-      }
-      else if (validate === "consonant") {
-        $(".result").text(word.slice(1)+ word[0]+"ay");
+      var validate = pigLatin(word);
+      debugger;
+      if (validate) {
+        $(".result").text(pigLatin(word));
       }
       else {
-        $(".result").text("no")
+        alert("error");
       }
+
+
     event.preventDefault();
-    })
-  })
+  });
+});
