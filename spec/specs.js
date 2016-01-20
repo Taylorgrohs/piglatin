@@ -8,7 +8,7 @@ describe('pigLatin', function() {
   })
 
   it('starts with one or more consonants, move all of the first consecutive consonants to the end and add "ay"', function(){
-    expect(pigLatin("start")).to.equal(true);
+    expect(pigLatin("apple")).to.equal(true);
   })
 
   it('starts with "y" treat as consonant', function(){
