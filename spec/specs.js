@@ -12,6 +12,6 @@ describe('pigLatin', function() {
   })
 
   it('starts with "y" treat as consonant', function(){
-    expect(pigLatin("yellow")).to.equal(false);
+    expect(pigLatin("yellow")).to.equal(true);
   })
 })
